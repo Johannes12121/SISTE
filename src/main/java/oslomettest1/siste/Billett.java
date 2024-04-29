@@ -18,10 +18,10 @@ public class Billett {
     private Integer antall;
     private String fornavn;
     private String etternavn;
-    private String telefon;
+    private Integer telefon;
     private String epost;
 
-    public Billett(String film, Integer antall, String fornavn, String etternavn, String telefon, String epost){
+    public Billett(String film, Integer antall, String fornavn, String etternavn, Integer telefon, String epost){
         this.film = film;
         this.antall = antall;
         this.fornavn = fornavn;

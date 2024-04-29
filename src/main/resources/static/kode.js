@@ -42,7 +42,7 @@ $("#kjop").click(function() {
     else {
         $("#etternavnError").html("");
     }
-    if (telefon <=0){
+    if (telefon < 0){
         $("#telefonError").html("du må skrive inn et posetift antall");
         feil = false;    }
     else {
