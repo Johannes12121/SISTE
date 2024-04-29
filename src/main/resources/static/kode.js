@@ -1,4 +1,7 @@
-
+const telefonkjekk= /^[1-9]+$/
+const epostkjekk = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+//epostkjekk er tatt fra:https://emaillistvalidation.com/blog/email-validation-in-javascript-using-regular-expressions-the-ultimate-guide/
+const navnkjekk =/^[A-Za-z]+$/;
 
 $("#kjop").click(function() {
     const film = $("#film").val();
@@ -30,25 +33,25 @@ $("#kjop").click(function() {
     else {
         $("#filmError").html("");
     }
-    if (!fornavn){
+    if (!fornavn||!navnkjekk.test(fornavn)){
         $("#fornavnError").html("feil ved fornavn");
         feil = false;    }
     else {
         $("#fornavnError").html("");
     }
-    if (!etternavn){
+    if (!etternavn||!navnkjekk.test(etternavn)){
         $("#etternavnError").html("Feil ved etternavn");
         feil = false;    }
     else {
         $("#etternavnError").html("");
     }
-    if (telefon < 0){
-        $("#telefonError").html("du må skrive inn et posetift antall");
+    if (telefon ===""||!telefonkjekk.test(telefon)){
+        $("#telefonError").html("du må skrive inn et validert telefonnr");
         feil = false;    }
     else {
         $("#telefonError").html("");
     }
-    if (!epost){
+    if (epost===""||!epostkjekk.test(epost)){
         $("#epostError").html("Feil ved epost");
         feil = false;    }
     else {
